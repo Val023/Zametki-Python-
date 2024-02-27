@@ -85,3 +85,39 @@ def delete_note():
     
     os.remove(f"Notes/{_title}.json")
     print(f"Заметка {_title} удалена")    
+
+while (True):
+    print("Работа с заметками.")
+    print("Выберите действие:")
+    print("1 - Новая заметка")
+    print("2 - Посмотреть заголовки заметок")
+    print("3 - Прочесть заметку")
+    print("4 - Редактировать заметку")
+    print("5 - Удалить заметку")
+    print("6 - Выход")
+    _user_choice = input("Выберите опцию (1-6): ")
+    
+    if _user_choice == "1":
+        create_note()
+        print("Для продолжения нажмите Enter")
+        input()
+    elif _user_choice == "2":
+        read_title_notes()
+        print("Для продолжения нажмите Enter")
+        input()
+    elif _user_choice == "3":
+        read_note()
+        print("Для продолжения нажмите Enter")
+        input()
+    elif _user_choice == "4":
+        edit_note()
+        print("Для продолжения нажмите Enter")
+        input()
+    elif _user_choice == "5":
+        delete_note()
+        print("Для продолжения нажмите Enter")
+        input()
+    elif _user_choice == "6":
+        break
+    else:
+        print("Неверный выбор. Введите заново.")
