@@ -72,3 +72,16 @@ def edit_note():
         _file.write(_note)
         
     print(f"Заметка {_title} отредактирована")
+
+def delete_note():
+    if not os.path.exists("Notes"):
+        print("Папки \"Notes\" не существует")
+        return
+    
+    _title = input("Введите название заметки: ")
+    if not os.path.exists(f"Notes/{_title}.json"):
+        print("Заметка не найдена")
+        return
+    
+    os.remove(f"Notes/{_title}.json")
+    print(f"Заметка {_title} удалена")    
