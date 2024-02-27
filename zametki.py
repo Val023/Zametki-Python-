@@ -29,4 +29,20 @@ def read_title_notes():
                 _split_line = _line.split(";")
                 print(">>: " + _split_line[0])
                 break
+
+def read_note():
+    if not os.path.exists("Notes"):
+        print("Папки \"Notes\" не существует")
+        return
     
+    _title = input("Введите название заметки: ")
+    if not os.path.exists(f"Notes/{_title}.json"):
+        print("Заметки не найдена")
+        return
+    
+    with open(f"Notes/{_title}.json", "r") as _note_file:
+        for _line in _note_file:
+            _split_line = _line.split(";")
+            print(">>: " + _split_line[0])
+            print("# : " + _split_line[1])
+            break    
